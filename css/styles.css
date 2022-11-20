@@ -125,7 +125,7 @@ button {
   position: absolute;
   width: 100%;
   height: 4px;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   background: var(--main-blue-color);
   border-radius: 2px;
@@ -307,6 +307,7 @@ button {
   padding-top: 27px;
   padding-bottom: 27px;
   bottom: 0;
+  left: 0;
 }
 
 .section-title {
@@ -612,10 +613,6 @@ fill: #ffffff; */
   width: calc((100% - 60px) / 3);
 }
 
-.portfolio-projects-item:hover .hover-text {
-  transform: translateY(0);
-  overflow: visible;
-}
 .portfolio-project-link {
   display: block;
   transition-property: box-shadow;
@@ -627,6 +624,11 @@ fill: #ffffff; */
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+.portfolio-project-link:hover .hover-text {
+  transform: translateY(0);
+  overflow: visible;
+}
+
 .card-wrap {
   position: relative;
   overflow: hidden;
@@ -635,16 +637,21 @@ fill: #ffffff; */
 .hover-text {
   position: absolute;
   top: 0;
+  left: 0;
   background-color: rgba(33, 150, 243, 0.9);
   color: var(--white-color);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
-  padding: 63px 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   transform: translateY(100%);
-  transition-property: transform overflow;
+  transition-property: transform, overflow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
